@@ -7,10 +7,10 @@ Displays the current time in HH:MM:SS format.
 Gradient background transitioning from purple to blue.
 Modern font and color scheme for the clock display.
 Prerequisites
-Python 3.x
+Python 3
 Installation
 Clone the repository or download the clock.py file.
-Ensure you have Python 3.x installed on your system.
+Ensure you have Python 3 installed on your system.
 Usage
 Navigate to the directory containing clock.py.
 
@@ -23,7 +23,14 @@ python clock.py
 
 use commands 
 ```
+python --version
+# or
+python3 --version
 
+pip install tk
+# or on some systems
+pip3 install tk
 
 ```
+to make sure necessary libraries are available  
 
