@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <header>{{title}}</header>
+  <link rel="stylesheet" href="anchor-games/public/styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/trading-cards">Trading Cards</a></li>
+      <li><a href="/board-games">Board Games</a></li>
+      <li><a href="/video-games">Video Games</a></li>
+    </ul>
+  </nav>
+  <h1>{{ title }}</h1>
+  <ul>
+    {{#each products}}
+    <li>{{this.name}} - ${{this.price}}</li>
+    {{/each}}
+  </ul>
+</body>
+<footer>Anchor Games LLC 2023</footer>
+</html>
