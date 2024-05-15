@@ -10,7 +10,7 @@ Search and filter products
 Secure endpoints using Passport.js
 Installation
 Prerequisites
-Ensure you have the following installed on your machine:
+Ensure you have the following installed on your machine: 
 
 Node.js
 MongoDB
