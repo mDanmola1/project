@@ -4,7 +4,7 @@ Anchor Games is an e-commerce platform for buying and selling trading cards, boa
 Features
 User registration and login
 JWT-based authentication
-Role-based access control for admin functions
+Role-based access control for admin functions 
 Add, view, and remove items from the cart **** CART FUNCTIONS WILL NOT WORK WITH THIS ITERATION
 Search and filter products
 Secure endpoints using Passport.js
