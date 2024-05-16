@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Teacher App</title>
+    <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome To the Teacher App</h1>
+        <button id="login-button">Login</button>
+        <button id="create-account-button">Create Account</button>
+
+        <div id="login-window" class="login-window" style="display:none;">
+            <h2>Login</h2>
+            <form id="login-form" method="post" action="{% url 'login_user' %}">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <button type="submit">Login</button>
+            </form>
+            <div id="login-feedback"></div>
+        </div>
+
+        <div id="create-account-window" class="create-account-window" style="display:none;">
+            <h2>Create Account</h2>
+            <form method="post" action="{% url 'register_user' %}">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="new-username" name="username"> <!-- Changed ID to 'new-username' for uniqueness -->
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first_name">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last_name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="password">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="output-login"></div>
+        <div id="student-name-window" class="student-name-window" style="display:none;">
+            <!-- Attendance section -->
+        </div>
+
+        <!-- Other elements -->
+    </div>
+
+    <script src="{% static 'accounts/app.js' %}"></script>
+</body>
+</html>
+

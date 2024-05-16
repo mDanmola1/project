@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Page</title>
+    <link rel="stylesheet" href="{% static 'attendance/styles.css'%}">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance</h1>
+        <input type="text" id="student-input" placeholder="Enter student names separated by commas to add new students" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+        <button onclick="addMultipleStudents()">Add Students</button>
+        <div id="student-list-div"></div>
+        <button id="save-students-button">Save Students</button>
+        <button id="sign-out-button">Sign Out</button>
+    </div>
+
+    <script src="{% static 'attendance/attendance.js' %}"></script>
+</body>
+</html>
