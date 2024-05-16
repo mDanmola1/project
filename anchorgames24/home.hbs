@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {{> header}} <!-- Include the header partial -->
+    <!-- page title -->
+    <h1>Welcome to {{ title }}</h1>
+    <footer>Anchor Games LLC 2023</footer>
+</body>
+<script>
+    function addToCart(productId, name, price) {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('You need to be logged in to add items to the cart.');
+            return;
+        }
+
+        fetch('/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ productId, name, price })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+            } else {
+                alert('Item added to cart');
+            }
+        })
+        .catch(error => {
+            console.error('Error adding to cart:', error);
+            alert('Error adding to cart');
+        });
+    }
+</script>
+</html>
